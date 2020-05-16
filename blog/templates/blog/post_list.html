@@ -7,33 +7,12 @@
     	<div>
 			<h1><a href="/">Сборки пк</a></h1>
     	</div>
-
-
-    	<div>
-			<p>published 16.05.2020 9:28</p>
-			<h2><a href="">Первая бюджетная сборка за 15.000 рублей</a></h2>
-			<p>
-			-Intel Core i5 2500 <br />
-			-GTX 750 Ti	<br />
-			-ОЗУ 8gb 1333MHz <br/>
-			-H61M-P20(G3) или любая другая материнская плата на сокет 1155 <br />
-			-Блок питания на 500W <br />
-			-HDD, любой жёсткий диск <br />
-			-И любой корпус <br />
-			</p>
-    	</div>
-    	<div>
-			<p>published 16.05.2020 9:33</p>
-			<h2><a href="">Вторая сборка средняя стоимость 60.000 рублей</a></h2>
-			<p>
-				-Amd Ryzen 5 2600 <br />
-				-RTX 2060 <br />
-				-Gigabyte B450 Gaming X <br />
-				-Be quiest 9 600W <br />
-				-Kingston Fury RGB 16gb 2933MHz <br />
-				-Kingston A400 <br />
-				-Любой корпус на ATX <br />
-			</p>
-    	</div>
-	</body>
+		{% for post in posts %}
+   			<div>
+        		<p>published: {{ post.published_date }}</p>
+        		<h1><a href="">{{ post.title }}</a></h1>
+        		<p>{{ post.text|linebreaksbr }}</p>
+    		</div>
+		{% endfor %}
+    </body>
 </html>
